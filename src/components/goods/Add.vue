@@ -139,6 +139,7 @@ export default {
   data() {
     return {
       activeIndex: "0",
+      msg:"",
       addForm: {
         goods_name: "",
         goods_price: 0,
@@ -293,10 +294,9 @@ export default {
           this.addForm.attrs.push(newInfo)
         })
         form.attrs = this.addForm.attrs
-
         const {data: res} = await this.$http.post('goods',form)
         if(res.meta.status !== 201){
-          this.$message.error('提交商品失败！')
+          this.$message.error('提交商品失败!!!!!!!!!!!')
           return
         }
         this.$message.success('提交商品成功！')
